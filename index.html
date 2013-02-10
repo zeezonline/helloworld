@@ -1,31 +1,58 @@
-<!DOCTYPE HTML>
-<html>
-  <head>
-  
-    <title>PhoneGap</title>
-    
-    <script type="text/javascript" src="phonegap.js"></script>
-    
-    <script type="text/javascript">
-    
-       /** Called when phonegap javascript is loaded */
-       function onDeviceReady(){
-         document.getElementById("helloworld").innerHTML="Hello World! Loaded PhoneGap Framework!";
-                 console.log("###################################");
-       }
-       
-       /** Called when browser load this page*/
-       function init(){
-          document.addEventListener("deviceready", onDeviceReady, false);
-       }
-       
-    </script>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<title>Retirement Countdown</title> 
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+	<script type="text/javascript" src="date.js"></script>
+    <script type="text/javascript" src="xdate.js"></script>
+	<script type="text/javascript" src="my.js"></script>
+	<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+    <script src="newscript.js"> </script>
+<link href="my.css" rel="stylesheet" type="text/css" />
+</head>
 
+<body>
+<div data-role="page" data-theme="a" data-content-theme="e">
 
-  </head>
-  <body onLoad="init()">
-  
-    <h1 id="helloworld">...</h1>
-    
-  </body>
+	<div data-role="header">
+		<h1>Retirement Countdown</h1>
+       <!-- <a href="app.html" data-icon="gear" class="ui-btn-right">Options</a>-->
+	</div><!-- /header -->
+
+	<div data-role="content" >	
+    <!--<div class="ui-grid-a" >
+	<div class="ui-block-a" id="one" >Days Total: </div>
+	<div class="ui-block-b" id="two" >School Days: </div>-->
+	
+		<h3>End of School Year</h3>		
+       <ul id="mylist" data-role="listview" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow">
+			<li class="ui-li ui-li-static ui-btn-up-c ui-li-has-count ui-corner-top">Total Days <span id = "span1" class="ui-li-count ui-btn-up-c ui-btn-corner-all">0</span></li>
+				<li class="ui-li ui-li-static ui-btn-up-c ui-li-has-count">Teacher Days <span id="span2" class="ui-li-count ui-btn-up-c ui-btn-corner-all">0</span></li>
+				<li class="ui-li ui-li-static ui-btn-up-c ui-li-has-count">Student Days<span id="span3"   class="ui-li-count ui-btn-up-c ui-btn-corner-all">0</span></li>
+				
+		</ul>
+       
+       
+	</div><!-- /content -->
+	
+	<div data-role="footer" data-position="fixed">
+		<h4>ZeezOnline</h4>
+	</div><!-- /footer -->
+	
+</div><!-- /page -->
+<script>
+		/*$("#WriteSomething").html(totalDays());*/
+		/*$("#one").append(totalDays());*/
+		/*$("#two").append(schoolDays());*/
+		
+		$('#span1').text(totalDays());
+		$('#span2').text(teacherInService());
+		$('#span3').text(schoolDays());
+		$('#mylist').listview('refresh');
+		</script>
+
+</body>
 </html>

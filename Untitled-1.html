@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<script src="xdate.js">
+</script>
+<script type="text/javascript" src="date.js"></script>
+
+<title>Untitled Document</title>
+</head>
+
+<body>
+<p id="ResultsP"></p>
+<p id="WriteSomething"></p>
+
+<script type="text/javascript">
+document.getElementById('ResultsP').innerHTML = 'Hello World';
+document.getElementById('WriteSomething').innerHTML = dateNinja();
+
+
+
+function dateNinja()
+{
+	var today = new XDate().clearTime();
+	var newDate = new XDate(2013,1,25);
+	
+	var diff = today.diffDays(newDate);
+	days = diff;
+	holiday1 = new Date(2013,1,21);
+	for (c = 0; c <diff; c++)
+	{
+		
+		newDays = new Date.today().add(c).days();
+		if(!newDays.isWeekday()){
+			
+			days = days - 1;
+			document.write("Weekend " + newDays.toString("MMM d, yyyy") + "<br/>");
+		}else{
+			if(newDays.equals(holiday1))
+			{
+				days = days - 1;
+				document.write("Holiday " + newDays.toString("MMM d, yyyy") + "<br/>");
+			}
+		}
+		
+		
+	}
+	return days;	
+}
+
+
+
+function DaysToo()
+{
+	var today = new XDate().clearTime();
+	var newDate = new XDate(2013,1,25);
+	
+	var diff = today.diffDays(newDate);
+	someDate = today.addDays(diff);
+	document.write(someDate.toString() + "<br/>");
+	document.write(someDate.getDay());
+	for (c = 0; c<diff; c++)
+	{
+		newDate2 = today.addDays(c);
+		
+		isWeekend(today.addDays(c));
+		
+	}
+	/*<!--
+	document.writeln(today);
+	document.writeln(newDate);
+	document.write(diff);
+	-->*/
+	
+}
+function isWeekend(someDate)
+{
+	
+	document.write(c.toString() + " " + someDate.toString() + "<br/>");
+}
+
+function writesomething()
+{
+	for (c = 0; c <5; c++)
+	{
+		document.write("Value " + c + ":");
+	}
+}
+
+
+</script>
+
+
+</body>
+</html>
